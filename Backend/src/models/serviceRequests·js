@@ -1,0 +1,24 @@
+// filepath: c:\Users\B. VARSHA\Verm Farm\Backend\src\models\ServiceRequest.js
+const mongoose = require('mongoose');
+
+const ServiceRequestSchema = new mongoose.Schema({
+  // Define your schema fields here
+  farmerId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  landownerId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null },
+  materialType: String,
+  quantity: Number,
+  serviceChargePercent: Number,
+  notes: String,
+  status: { type: String, default: 'pending' },
+  actualRevenue: Number
+}, { timestamps: true });
+
+// Example methods for earnings calculation
+ServiceRequestSchema.methods.calculateServiceCharge = function() {
+  return (this.actualRevenue || 0) * (this.serviceChargePercent || 0) / 100;
+};
+ServiceRequestSchema.methods.calculateFarmerEarnings = function() {
+  return (this.actualRevenue || 0) - this.calculateServiceCharge();
+};
+
+module.exports = mongoose.model('ServiceRequest', ServiceRequestSchema);
