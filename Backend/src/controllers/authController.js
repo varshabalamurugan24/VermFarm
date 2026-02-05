@@ -2,6 +2,7 @@ const User = require('../models/User');
 //const Inventory = require('../controllers/inventorycontroller');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const Inventory = require('../models/inventory');
 
 // @desc    Register user
 // @route   POST /api/auth/register

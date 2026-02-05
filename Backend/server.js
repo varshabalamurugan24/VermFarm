@@ -45,7 +45,7 @@ app.use('/api/', limiter);
 // Mount routes
 app.use('/api/auth', require('./src/routes/auth'));
 app.use('/api/inventory', require('./src/routes/inventory'));
-app.use('/api/service-requests', require('./src/routes/serviceRequests'));
+app.use('/api/service-requests', require('./src/routes/serviceRequest'));
 app.use('/api/marketplace', require('./src/routes/marketplace'));
 
 // Root route

@@ -382,7 +382,7 @@ exports.contactSeller = async (req, res, next) => {
   }
 };
 
-module.exports = {
+/*module.exports = {
   getListings,
   getListing,
   createListing,
@@ -393,4 +393,16 @@ module.exports = {
   activateListing,
   getMarketplaceStats,
   contactSeller
+};*/
+module.exports = {
+  getListings: exports.getListings,
+  getListing: exports.getListing,
+  createListing: exports.createListing,
+  getMyListings: exports.getMyListings,
+  updateListing: exports.updateListing,
+  deleteListing: exports.deleteListing,
+  deactivateListing: exports.deactivateListing,
+  activateListing: exports.activateListing,
+  getMarketplaceStats: exports.getMarketplaceStats,
+  contactSeller: exports.contactSeller
 };

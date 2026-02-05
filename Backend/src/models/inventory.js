@@ -50,11 +50,11 @@ const inventorySchema = new mongoose.Schema({
 inventorySchema.index({ userId: 1, type: 1 });
 
 // Update lastUpdated on quantity change
-inventorySchema.pre('save', function(next) {
+inventorySchema.pre('save', function() {
   if (this.isModified('quantity')) {
     this.lastUpdated = Date.now();
   }
-  next();
+  
 });
 
 module.exports = mongoose.model('Inventory', inventorySchema);

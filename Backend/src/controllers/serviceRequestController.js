@@ -1,4 +1,4 @@
-const ServiceRequest = require('../models/ServiceRequest');
+const ServiceRequest = require('../models/serviceRequest');
 const Inventory = require('../models/inventory');
 const User = require('../models/User');
 
